@@ -5,8 +5,8 @@ body {
   padding: 50px 20px;
   background-image: url("img/bg-1.jpg");
   background-repeat: no-repeat;                
-  background-position: right top;       
-  background-size: contain;                    
+  background-position: left top;       
+                   
 }
 
 .cards__container {
