@@ -4,9 +4,9 @@ body {
   margin: 0;
   padding: 50px 20px;
   background-image: url("img/dandelions.jpg");
-  background-repeat: no-repeat;                
-  background-position: left top;        
-  background-attachment: fixed;   
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-attachment: fixed;
 }
 
 

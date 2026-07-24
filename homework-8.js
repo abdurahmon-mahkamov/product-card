@@ -16,11 +16,11 @@ console.log("Задание 3 - Личные данные:", personalData);
 
 // Задание 4: Объект с данными об автомобиле
 const carData = {
-  brand: " KAIYI",
+  brand: "KAIYI",
   model: "X7 Kunlum",
   year: 2025,
   color: "чёрный",
-  transmission: "Автомат"
+  transmission: "Автомат",
 };
 
 // Добавляем объект personalData как владельца авто
@@ -31,35 +31,34 @@ console.log("Задание 4 - Данные автомобиля:", carData);
 console.log("Задание 4 - Владелец автомобиля:", carData.owner.firstName);
 
 
-
 // Задание 5: Функция проверки и добавления "максимальной скорости"
 function addMaxSpeed(carObject) {
-  if (carObject.maxSpeed === undefined) { // Проверяем, нет ли свойства "maxSpeed"
-    carObject.maxSpeed = 220; // Если нет, добавляем и задаем значение
-    console.log(`Задание 5 - Добавлена максимальная скорость: ${carObject.maxSpeed} км/ч`);
+  if (carObject.maxSpeed === undefined) {
+    carObject.maxSpeed = 220;
+    console.log(`Задание 5 - Добавлена максимальная скорость: ${carObject.maxSpeed} км/ч`); // Исправлено: добавлены обратные кавычки
   } else {
     console.log("Задание 5 - Максимальная скорость уже есть в объекте.");
   }
 }
 
 // Пример вызова функции
-addMaxSpeed(carData); // Добавит скорость
-addMaxSpeed(carData); // Ничего не сделает, т.к. скорость уже есть
+addMaxSpeed(carData);
+addMaxSpeed(carData);
 console.log("Задание 5 - Объект после проверки:", carData);
 
 // Задание 6: Функция вывода свойства объекта по имени
 function getPropertyValue(obj, propertyName) {
   if (obj[propertyName] !== undefined) {
-    console.log(`Задание 6 - Значение свойства "${propertyName}":`, obj[propertyName]);
+    console.log(`Задание 6 - Значение свойства "${propertyName}":`, obj[propertyName]); // Исправлено: добавлены обратные кавычки
   } else {
-    console.log(`Задание 6 - Свойство "${propertyName}" не найдено в объекте.`);
+    console.log(`Задание 6 - Свойство "${propertyName}" не найдено в объекте.`); // Исправлено: добавлены обратные кавычки
   }
 }
 
 // Примеры вызова функции
-getPropertyValue(personalData, "firstName"); // "Абдурахмон"
-getPropertyValue(carData, "model");     // "Camry"
-getPropertyValue(carData, "horsepower"); // Свойство не найдено
+getPropertyValue(personalData, "firstName");
+getPropertyValue(carData, "model");
+getPropertyValue(carData, "horsepower");
 
 // Задание 7: Массив названий продуктов
 const productNames = [
@@ -72,22 +71,58 @@ const productNames = [
 
 console.log("Задание 7 - Массив продуктов:", productNames);
 
-// Задание 8: Массив объектов-книг
+// Задание 8: Массив объектов-книг (исправлено форматирование)
 const bookList1 = [
-  { title: "Алхимик", author: "Пауло Коэльо", year: 1988, coverColor: "Желтый", genre: "Притча" },
-  { title: "Мастер и Маргарита", author: "Михаил Булгаков", year: 1967, coverColor: "Зеленый", genre: "Роман" },
-  { title: "Война и мир", author: "Лев Толстой", year: 1869, coverColor: "Синий", genre: "Эпопея" }
+  { 
+    title: "Алхимик", 
+    author: "Пауло Коэльо", 
+    year: 1988, 
+    coverColor: "Желтый", 
+    genre: "Притча" 
+  },
+  { 
+    title: "Мастер и Маргарита", 
+    author: "Михаил Булгаков", 
+    year: 1967, 
+    coverColor: "Зеленый", 
+    genre: "Роман" 
+  },
+  { 
+    title: "Война и мир", 
+    author: "Лев Толстой", 
+    year: 1869, 
+    coverColor: "Синий", 
+    genre: "Эпопея" 
+  }
 ];
 
-// Добавляем еще одну книгу в конец списка
-bookList1.push({ title: "Гарри Поттер", author: "Джоан Роулинг", year: 1997, coverColor: "Красный", genre: "Фэнтези" });
+// Добавляем еще одну книгу в конец списка (исправлено форматирование)
+bookList1.push({ 
+  title: "Гарри Поттер", 
+  author: "Джоан Роулинг", 
+  year: 1997, 
+  coverColor: "Красный", 
+  genre: "Фэнтези" 
+});
 
 console.log("Задание 8 - Обновленный список книг:", bookList1);
 
-// Задание 9: Создаем второй массив книг для другой вселенной
+// Задание 9: Создаем второй массив книг для другой вселенной (исправлено форматирование)
 const bookList2 = [
-  { title: "Хоббит", author: "Дж.Р.Р. Толкин", year: 1937, coverColor: "Коричневый", genre: "Фэнтези" },
-  { title: "Властелин Колец", author: "Дж.Р.Р. Толкин", year: 1954, coverColor: "Серый", genre: "Фэнтези" }
+  { 
+    title: "Хоббит", 
+    author: "Дж.Р.Р. Толкин", 
+    year: 1937, 
+    coverColor: "Коричневый", 
+    genre: "Фэнтези" 
+  },
+  { 
+    title: "Властелин Колец", 
+    author: "Дж.Р.Р. Толкин", 
+    year: 1954, 
+    coverColor: "Серый", 
+    genre: "Фэнтези" 
+  }
 ];
 
 // Объединяем два массива в один с помощью оператора расширения (...)
@@ -98,10 +133,9 @@ console.log("Задание 9 - Объединенный список книг:"
 // Задание 10: Функция с map для добавления свойства 'isRare'
 function addIsRareProperty(booksArray) {
   const updatedBooks = booksArray.map(book => {
-    // Создаем новый объект для каждой книги, чтобы не изменять оригинал напрямую
     return {
-      ...book, // Копируем все существующие свойства книги
-      isRare: book.year < 2000 // Если год раньше 2000, то считается редкой
+      ...book,
+      isRare: book.year < 2000
     };
   });
   return updatedBooks;
