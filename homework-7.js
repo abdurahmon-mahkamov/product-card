@@ -56,4 +56,4 @@ const websiteVersion = "1.0.0";
 let userLoggedIn = true;
 const maxItemsInCart = 10;
 
-console.log(`Версия сайта: ${websiteVersion}, Пользователь авторизован: ${userLoggedIn}, Максимум товаров в корзине: ${maxItemsInCart}`);
+console.log(`Версия сайта: ${websiteVersion}, Пользователь авторизован: ${userLoggedIn}, Максимум товаров в корзине: ${maxItemsInCart}`)
