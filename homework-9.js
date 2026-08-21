@@ -7,10 +7,12 @@ import { socialMediaComments } from './comments.js';
 // ===========================================
 
 // Задание 2: Массив чисел и его фильтрация
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const filteredNumbers = numbers.filter(number => {
-  return number.toString().startsWith('5');
-});
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; 
+
+const filteredNumbers = numbers.filter(number => number >= 5);
+
+  
+console.log(filteredNumbers); // Результат: [5, 6, 7, 8, 9, 10]
 
 console.log("Задание 2 - Исходный массив:", numbers);
 console.log("Задание 2 - Отфильтрованный массив (начинается с 5):", filteredNumbers);
