@@ -2,22 +2,21 @@
 const subscribeForm = document.getElementById('subscribeForm');
 const emailInput = document.getElementById('email');
 
-subscribeForm.addEventListener('submit', (event) => {
-    event.preventDefault(); // отменяем стандартную отправку
+if (subscribeForm && emailInput) {
+  subscribeForm.addEventListener('submit', (event) => {
+    event.preventDefault();
 
-    // Проверка валидности email
     if (!emailInput.checkValidity() || emailInput.value.trim() === '') {
-        emailInput.reportValidity(); // показываем подсказку браузера
-        return;
+      emailInput.reportValidity();
+      return;
     }
 
-    // Вывод объекта в консоль
     const data = { email: emailInput.value };
     console.log(data);
 
     subscribeForm.reset();
-});
-
+  });
+}
 
 /* ================== УРОВЕНЬ 2: Модалка ================== */
 const openModalBtn = document.getElementById('openModalBtn');
@@ -25,28 +24,35 @@ const closeModalBtn = document.getElementById('closeModalBtn');
 const modal = document.getElementById('modal');
 const registerForm = document.getElementById('registerForm');
 
-// Внешняя переменная user
-let user = null;
+// Внешняя переменная user (глобальная, чтобы было видно в консоли)
+window.user = null;
 
 // Открытие модалки
-openModalBtn.addEventListener('click', () => {
+if (openModalBtn && modal) {
+  openModalBtn.addEventListener('click', () => {
     modal.classList.add('modal-showed');
-});
+  });
+}
 
 // Закрытие модалки (крестик)
-closeModalBtn.addEventListener('click', () => {
+if (closeModalBtn && modal) {
+  closeModalBtn.addEventListener('click', () => {
     modal.classList.remove('modal-showed');
-});
+  });
+}
 
 // Закрытие по клику на затемнённый фон
-modal.addEventListener('click', (event) => {
+if (modal) {
+  modal.addEventListener('click', (event) => {
     if (event.target === modal) {
-        modal.classList.remove('modal-showed');
+      modal.classList.remove('modal-showed');
     }
-});
+  });
+}
 
 // Обработка регистрации
-registerForm.addEventListener('submit', (event) => {
+if (registerForm) {
+  registerForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
     const password = document.getElementById('password').value;
@@ -54,14 +60,14 @@ registerForm.addEventListener('submit', (event) => {
 
     // Проверка валидности формы
     if (!registerForm.checkValidity()) {
-        registerForm.reportValidity();
-        return;
+      registerForm.reportValidity();
+      return;
     }
 
     // Проверка совпадения паролей
     if (password !== passwordRepeat) {
-        alert('Пароли не совпадают! Регистрация отклонена.');
-        return;
+      alert('Пароли не совпадают! Регистрация отклонена.');
+      return;
     }
 
     // Собираем данные формы
@@ -72,12 +78,13 @@ registerForm.addEventListener('submit', (event) => {
     userData.createdOn = new Date();
 
     // Присваиваем во внешнюю переменную
-    user = userData;
+    window.user = userData;
 
     // Выводим в консоль
-    console.log(user);
+    console.log(window.user);
 
     // Закрываем модалку и сбрасываем форму
     modal.classList.remove('modal-showed');
     registerForm.reset();
-});
+  });
+}
